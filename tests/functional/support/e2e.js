@@ -1,0 +1,1 @@
+// Comandos globales de Cypress se mantienen en el POM para conservar una API explícita.

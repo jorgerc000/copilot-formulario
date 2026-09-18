@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pruebas | Registro de estudiantes</title>
+  <link rel="stylesheet" href="tests.css">
+</head>
+<body>
+  <main class="test-shell">
+    <header>
+      <p class="eyebrow">Validación automatizada</p>
+      <h1>Pruebas del registro de estudiantes</h1>
+      <p class="subtitle">Suite funcional ejecutada sobre el formulario real.</p>
+    </header>
+    <section class="summary" aria-live="polite">
+      <div><span id="passed-count">0</span><small>aprobadas</small></div>
+      <div><span id="failed-count">0</span><small>fallidas</small></div>
+      <strong id="suite-status">Ejecutando...</strong>
+    </section>
+    <section class="results" aria-labelledby="results-title">
+      <h2 id="results-title">Resultados</h2>
+      <ol id="test-results"></ol>
+    </section>
+    <p id="finished-at" class="finished"></p>
+    <iframe id="app-frame" title="Aplicación bajo prueba" hidden></iframe>
+  </main>
+  <script src="tests.js"></script>
+</body>
+</html>

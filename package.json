@@ -1,0 +1,15 @@
+{
+  "name": "registro-estudiantes-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pruebas unitarias y funcionales Cypress para el registro de estudiantes",
+  "scripts": {
+    "test:unit": "node tests/unit/tests-terminal.js",
+    "test:e2e": "cypress run --browser chrome",
+    "test:e2e:open": "cypress open",
+    "test": "npm run test:unit && npm run test:e2e"
+  },
+  "devDependencies": {
+    "cypress": "^15.2.0"
+  }
+}

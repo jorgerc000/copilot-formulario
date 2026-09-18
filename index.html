@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Registro académico de estudiantes universitarios">
+  <title>Registro de estudiantes | Universidad Nova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#registro" aria-label="Universidad Nova, inicio">
+        <span class="brand-mark" aria-hidden="true"><i data-lucide="book-open"></i></span>
+        <span><strong>UNOVA</strong><small>Registro académico</small></span>
+      </a>
+      <div class="header-context"><span class="status-dot"></span> Portal administrativo <span class="divider"></span> Periodo 2026-I</div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Gestión académica <span></span></p>
+          <h1 id="page-title">Registro de estudiantes</h1>
+          <p class="intro-copy">Ingresa los datos básicos del estudiante para incorporarlo al registro institucional.</p>
+        </div>
+        <div class="secure-note"><i data-lucide="shield-check" aria-hidden="true"></i><span>Información protegida<br><small>Uso exclusivo del registro académico</small></span></div>
+      </section>
+
+      <section class="content-grid" id="registro">
+        <article class="form-card">
+          <div class="card-heading">
+            <div><span class="section-number">01</span><h2>Datos del estudiante</h2></div>
+            <p><span class="required-mark">*</span> Campos obligatorios</p>
+          </div>
+
+          <form id="student-form" novalidate>
+            <div class="form-grid">
+              <div class="field" data-field="identificacion">
+                <label for="identificacion"><i data-lucide="badge" aria-hidden="true"></i> Identificación <span>*</span></label>
+                <input id="identificacion" name="identificacion" type="text" autocomplete="off" placeholder="Ej. 1029384756" minlength="5" maxlength="20">
+                <p class="field-error" id="identificacion-error" role="alert"></p>
+              </div>
+              <div class="field" data-field="nombre">
+                <label for="nombre"><i data-lucide="user-round" aria-hidden="true"></i> Nombre <span>*</span></label>
+                <input id="nombre" name="nombre" type="text" autocomplete="given-name" placeholder="Ej. Valentina" maxlength="50">
+                <p class="field-error" id="nombre-error" role="alert"></p>
+              </div>
+              <div class="field" data-field="apellido">
+                <label for="apellido"><i data-lucide="users-round" aria-hidden="true"></i> Apellido <span>*</span></label>
+                <input id="apellido" name="apellido" type="text" autocomplete="family-name" placeholder="Ej. Martínez Rojas" maxlength="60">
+                <p class="field-error" id="apellido-error" role="alert"></p>
+              </div>
+              <div class="field" data-field="correo">
+                <label for="correo"><i data-lucide="mail" aria-hidden="true"></i> Correo electrónico <span>*</span></label>
+                <input id="correo" name="correo" type="email" autocomplete="email" placeholder="nombre@universidad.edu">
+                <p class="field-error" id="correo-error" role="alert"></p>
+              </div>
+              <div class="field" data-field="pais">
+                <label for="pais"><i data-lucide="globe-2" aria-hidden="true"></i> País <span>*</span></label>
+                <input id="pais" name="pais" type="text" autocomplete="country-name" placeholder="Ej. Colombia" maxlength="40">
+                <p class="field-error" id="pais-error" role="alert"></p>
+              </div>
+              <div class="field" data-field="carrera">
+                <label for="carrera"><i data-lucide="graduation-cap" aria-hidden="true"></i> Carrera <span>*</span></label>
+                <div class="select-wrap"><select id="carrera" name="carrera">
+                  <option value="">Selecciona una carrera</option>
+                  <option>Ing. Informática</option>
+                  <option>Ing. Electrónica</option>
+                  <option>Ing. Telecomunicaciones</option>
+                  <option>Ing. Robótica</option>
+                  <option>Otra</option>
+                </select></div>
+                <p class="field-error" id="carrera-error" role="alert"></p>
+              </div>
+              <div class="field" data-field="fechaNacimiento">
+                <label for="fechaNacimiento"><i data-lucide="calendar-days" aria-hidden="true"></i> Fecha de nacimiento <span>*</span></label>
+                <input id="fechaNacimiento" name="fechaNacimiento" type="date">
+                <p class="field-error" id="fechaNacimiento-error" role="alert"></p>
+              </div>
+              <div class="field age-field" data-field="edad">
+                <label for="edad"><i data-lucide="clock-3" aria-hidden="true"></i> Edad <span class="readonly-label">Calculada automáticamente</span></label>
+                <div class="readonly-input"><input id="edad" name="edad" type="text" value="—" readonly aria-describedby="age-help"><span>años</span></div>
+                <p id="age-help" class="field-hint">Se calcula con la fecha de nacimiento.</p>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="button button-primary" type="submit"><i data-lucide="user-plus" aria-hidden="true"></i> Registrar estudiante</button>
+              <button class="button button-secondary" type="reset"><i data-lucide="rotate-ccw" aria-hidden="true"></i> Limpiar</button>
+            </div>
+          </form>
+          <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
+        </article>
+
+        <aside class="summary-card" aria-label="Resumen del registro">
+          <div class="summary-top"><span class="summary-icon"><i data-lucide="clipboard-list" aria-hidden="true"></i></span><span class="live-label"><b></b> En línea</span></div>
+          <p class="summary-title">Registros de hoy</p>
+          <p class="summary-count" id="student-count">0</p>
+          <p class="summary-caption">estudiantes incorporados<br>en esta sesión</p>
+          <div class="summary-rule"></div>
+          <p class="summary-tip"><i data-lucide="info" aria-hidden="true"></i> Verifica la información antes de registrar.</p>
+        </aside>
+      </section>
+
+      <section class="table-section" aria-labelledby="table-title">
+        <div class="table-heading"><div><p class="eyebrow">Listado actual <span></span></p><h2 id="table-title">Estudiantes registrados</h2></div><span class="table-count" id="table-count">0 registros</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Identificación</th><th>Nombre completo</th><th>Correo</th><th>País</th><th>Carrera</th><th>F. nacimiento</th><th>Edad</th></tr></thead>
+            <tbody id="student-table-body"><tr class="empty-row"><td colspan="7"><span><i data-lucide="inbox" aria-hidden="true"></i></span><strong>Aún no hay estudiantes registrados</strong><small>Los registros aparecerán aquí al completar el formulario.</small></td></tr></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer><span>© 2026 Universidad Nova</span><span>Registro académico · Plataforma interna</span></footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
